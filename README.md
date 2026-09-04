@@ -94,30 +94,22 @@ sistently in the middle across all three categories, which tells me demand there
 
 If I were making a business call from this, I'd say South needs the most attention — either more marketing push or maybe just look into why sales are lagging there specifically, since it's dragging the average down across the board.
 
-## 3. What are the average sales sub_category in the Three most Competitive category 
+## 3. What are the sum sales sub_category in the Three most Competitive category 
 
-To find the average sales sub_category in the Category, i used a pivot_table to group them and draw out the output. the detailed step are in the link above 
+To find the sum sales sub_category in the Category, i to group them and draw out the output. the detailed step are in the  EDA link [EDA.ipynb](EDA.ipynb)
 
 ### Visualized Data
 
 ```python
-import plotly.express as px
-
-treemap_data = df.groupby(['Category', 'Sub-Category'])['Sales'].sum().reset_index()
-
-fig = px.treemap(
-    treemap_data,
-    path=['Category', 'Sub-Category'],
-    values='Sales',
-    title='Sales Breakdown: Category → Sub-Category',
-    width=800, height=800
-)
-fig.show()
+fig = px.sunburst(Sum_sales_sub_category_in_category, path=['Category','Sub-Category'], values='Sales',
+                   title = 'Sales Breakdown: Category + Sub-Category',
+                    width =800, height= 800 )
+fig.show()                
 ```
 
 ### Results
 
-[Visualization for sales break down](Visualization.ipynb)
+![Visualization for sales break down](IMAGES/Sales%20Breakdown.png)
 
 ### Insight
 
@@ -155,6 +147,7 @@ A few recurring issues came up during the cleaning and analysis process, which w
 2. Column name mismatches (case sensitivity and spacing) caused several KeyError issues during grouping and aggregation — resolved by consistently verifying exact column names with df.columns.tolist() before referencing them.
 3. Overwriting original columns during transformation (e.g., replacing Order Date with just the month value) caused downstream errors when the original datetime format was needed again later. This was reolved by re-cleaning the whole dataset
 4. Aggregation output type confusion — distinguishing between a Series and DataFrame output from .groupby() operations, which affected how sorting and filtering methods (like .sort_values()) needed to be applied.
+5. Installation of *!pip install kaleido==0.2.1* i tried coverting the sunburst chart into image 
 
 # Conclusion
 This exploration into the E-Commerce/Retail Sales dataset during my SIWES programm has been incredibly informative. The insight i got enhance my understanding and spot out the issue of the south underperforming across all category. And also it has embended me with the solution to tackle the underperformance of the south region. This project is a good foundation for future exploratoin of E-Commerce/Retail Sales and provide solutions for any set back. 
