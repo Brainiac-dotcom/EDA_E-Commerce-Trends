@@ -154,14 +154,14 @@ This exploration into the E-Commerce/Retail Sales dataset during my SIWES progra
 
 ## Repository Structure
 │
-├── data
+# ├── data
 │   ├── Cleaned_Superstore.csv
 │   └── Visualization_Ready_Superstore.csv
-├── images
+# ├── images
 |
-├── notebooks
+# ├── notebooks
 │   ├── Data_Cleaning.ipynb
 │   ├── EDA.ipynb
 │   └── Visualization.ipynb
 |
-└── README.md
+# └── README.md
