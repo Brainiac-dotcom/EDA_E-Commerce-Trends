@@ -153,18 +153,15 @@ A few recurring issues came up during the cleaning and analysis process, which w
 This exploration into the E-Commerce/Retail Sales dataset during my SIWES programm has been incredibly informative. The insight i got enhance my understanding and spot out the issue of the south underperforming across all category. And also it has embended me with the solution to tackle the underperformance of the south region. This project is a good foundation for future exploratoin of E-Commerce/Retail Sales and provide solutions for any set back. 
 
 ## Repository Structure
-EDA_E-Commerce-Trends
 │
-├── data/
+├── data
 │   ├── Cleaned_Superstore.csv
 │   └── Visualization_Ready_Superstore.csv
+├── images
 |
-├── images/
-|
-├── notebooks/
+├── notebooks
 │   ├── Data_Cleaning.ipynb
 │   ├── EDA.ipynb
 │   └── Visualization.ipynb
 |
-│
 └── README.md
